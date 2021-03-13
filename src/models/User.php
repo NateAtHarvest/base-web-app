@@ -67,7 +67,21 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function getAuthKey()
     {
-        return $this->auth_key;
+        /**
+         * TODO: research what to do about this.  This was changed with Yii 2.0.40 - here are the notes from the
+         * change log
+         *
+         * The methods `getAuthKey()` and `validateAuthKey()` of `yii\web\IdentityInterface` are now also used to validate active
+        sessions (previously these methods were only used for cookie-based login). If your identity class does not properly
+        implement these methods yet, you should update it accordingly (an example can be found in the guide under
+        `Security` -> `Authentication`). Alternatively, you can simply return `null` in the `getAuthKey()` method to keep
+        the old behavior (that is, no validation of active sessions). Applications that change the underlying `authKey` of
+        an authenticated identity, should now call `yii\web\User::switchIdentity()`, `yii\web\User::login()`
+        or `yii\web\User::logout()` to recreate the active session with the new `authKey`.
+
+         *
+         */
+        return null;
     }
 
     /**
