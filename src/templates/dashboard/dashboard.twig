@@ -1,0 +1,7 @@
+{% extends "_layouts/default.twig" %}
+
+{% block adminbar %}
+{% if loggedIn %}
+    {% include "_partials/admin_bar.twig" %}
+{% endif %}
+{% endblock %}
