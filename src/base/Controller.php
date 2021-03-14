@@ -12,6 +12,15 @@ class Controller extends YiiWebController {
 
     private $data = [];
 
+    /**
+     * Checks to see if this has been set to app to use templates from the templates folder at the root of the project.
+     * If not, it uses the base templates under the src director.
+     *
+     * @var string
+     *
+     */
+    protected $template_dir = "base";
+
     public function __construct($id, $module, $config = [])
     {
         parent::__construct($id, $module, $config);
@@ -33,8 +42,12 @@ class Controller extends YiiWebController {
 
         $this->data['site_name'] = getenv("SITE_NAME");
 
+        if ($this->template_dir == "app") {
+            $loader = new \Twig\Loader\FilesystemLoader(APP_TEMPLATES);
+        } else {
+            $loader = new \Twig\Loader\FilesystemLoader($baseapi_path . '/templates');
+        }
 
-        $loader = new \Twig\Loader\FilesystemLoader($baseapi_path . '/templates');
         $this->twig = new \Twig\Environment($loader, [
             'cache' => false
         ]);

@@ -7,6 +7,7 @@
 define('BASE_API_SRC_PATH', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR);
 define('VENDOR_PATH', __DIR__ . '/../vendor');
 define('CONFIG_FILE', BASE_API_SRC_PATH . DIRECTORY_SEPARATOR . "config" . DIRECTORY_SEPARATOR . "web.config.php");
+define('APP_TEMPLATES', dirname(__DIR__) . DIRECTORY_SEPARATOR . "templates");
 
 // Load Composer's autoloader
 require_once VENDOR_PATH.'/autoload.php';
