@@ -1,11 +1,7 @@
-# Base-Web
-A barebones web app built on top of Yii2.  Currently this includes user
-management and an install script accessible by `~/console install`. 
+# Base Web App
 
-## Configuration
-Check out the .env.sample file.  Rename it to .env and fill in the values.
-
-## Dev Tech Stack
-- Laravel Valet
-- MySql 5.7
+Designed to aid in the rapid scaffolding of a custom PHP Web App built on top of Yii2.  The 
+user management and a basic control panel are provided already.  This
+repo is not designed to be used by itself.  To make use of it, take a look 
+at the Web App Starter at <https://github.com/Harvest-Media/web-app-starter>.
 
